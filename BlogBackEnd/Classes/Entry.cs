@@ -7,13 +7,15 @@ namespace BlogBackEnd.Classes
 {
     public class Entry
     {
+        private int Id;
         private string Title;
         private string Body;
 
         public Entry() { }
 
-        public Entry(string title, string body)
+        public Entry(int id, string title, string body)
         {
+            Id = id;
             Title = title;
             Body = body;
         }
@@ -36,8 +38,19 @@ namespace BlogBackEnd.Classes
         {
             Body = body;
         }
+        public int getId()
+        {
+            return Id;
+        }
 
+        public void setId(int id)
+        {
+            Id = id;
+        }
 
-
+        public override string ToString()
+        {
+            return "Id: " + Id + " \nTitle: " + Title + "\nBody: " + Body;
+        }
     }
 }

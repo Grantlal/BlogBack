@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using BlogBackEnd.Classes;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,7 +16,9 @@ namespace BlogBackEnd.Controllers
         [HttpGet]
         public string Get()
         {
-            return "Connected to Entry";
+            var newEntry = new Entry(1, "toast", "Banana");
+
+            return newEntry.ToString();
         }
     }
 }
